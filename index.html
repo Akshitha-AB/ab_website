@@ -1,365 +1,185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AB Robotics — Future Ready Robotics</title>
-<meta name="description" content="AB Robotics — intelligent robotics & automation for education, industry and makers."/>
-<style>
-  :root{
-    --bg:#050816;
-    --card:#071032;
-    --glass: rgba(255,255,255,0.04);
-    --accent1:#00b0ff;
-    --accent2:#0066ff;
-    --muted:#93a7c7;
-    --glow: 0 6px 30px rgba(0,176,255,0.12);
-    --radius:14px;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    background: radial-gradient(1200px 500px at 10% 10%, rgba(0,112,255,0.06), transparent),
-               radial-gradient(900px 400px at 90% 90%, rgba(0,176,255,0.03), transparent),
-               var(--bg);
-    color:#e6f0ff;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
-  }
-
-  /* NAV */
-  .nav{
-    position:sticky; top:0; z-index:1500;
-    backdrop-filter: blur(8px);
-    background: linear-gradient(180deg, rgba(5,8,22,0.55), rgba(5,8,22,0.25));
-    border-bottom:1px solid rgba(255,255,255,0.03);
-    box-shadow:0 4px 20px rgba(0,0,0,0.6);
-  }
-  .nav-inner{
-    max-width:1150px; margin:0 auto; display:flex; gap:1rem; align-items:center;
-    padding:12px 20px; justify-content:space-between;
-  }
-  .brand{display:flex; gap:12px; align-items:center; text-decoration:none; color:var(--accent1)}
-  .brand svg{width:44px;height:44px;filter:drop-shadow(0 6px 18px rgba(0,176,255,0.12))}
-  .brand h3{font-size:1rem; margin:0; letter-spacing:0.4px}
-  .nav-links{display:flex; gap:18px; align-items:center}
-  .nav-links a{color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px; font-weight:600}
-  .nav-links a:hover{color:white; background:rgba(255,255,255,0.03)}
-  .cta{background:linear-gradient(90deg,var(--accent2),var(--accent1)); color:white; padding:8px 14px; border-radius:12px; box-shadow: var(--glow); text-decoration:none; font-weight:700}
-  .hamb{display:none; background:transparent;border:0;color:var(--accent1); font-size:22px}
-
-  /* HERO */
-  .hero{
-    display:grid; grid-template-columns:1fr 480px; gap:30px; align-items:center;
-    max-width:1150px; margin:36px auto; padding:0 20px;
-  }
-  .hero-left{padding:24px 0}
-  .eyebrow{display:inline-block; background:linear-gradient(90deg,#00284d,#004d99); padding:6px 10px; border-radius:999px; color:var(--accent1); font-weight:700; font-size:12px}
-  h1{font-size:2.35rem; margin:18px 0; color:linear-gradient(90deg,#00b0ff,#66d1ff)}
-  h1 strong{background:linear-gradient(90deg,var(--accent1),#66d1ff); -webkit-background-clip:text; background-clip:text; color:transparent}
-  p.lead{color:var(--muted); font-size:1.05rem; max-width:60ch}
-  .hero-cta{margin-top:18px; display:flex; gap:12px; align-items:center}
-  .ghost{padding:10px 14px; background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); border-radius:12px; text-decoration:none}
-
-  /* hero card (robot) */
-  .hero-card{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:18px; padding:20px; box-shadow:0 12px 40px rgba(0,0,0,0.6);
-    border:1px solid rgba(255,255,255,0.03);
-  }
-  .robot-wrap{display:flex; gap:16px; align-items:center; justify-content:center; padding:8px}
-  .robot-svg{width:240px;height:240px}
-  .stats{display:flex; gap:12px; justify-content:center; margin-top:12px}
-  .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:8px 12px; border-radius:12px; font-weight:700; color:#dff4ff}
-  .tiny{font-size:12px; color:var(--muted); font-weight:600}
-
-  /* sections */
-  section{max-width:1150px; margin:36px auto; padding:0 20px}
-  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-  .card{background:var(--card); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03); box-shadow:0 10px 30px rgba(3,12,35,0.5)}
-  .card h3{color:var(--accent1); margin-bottom:8px}
-  .card p{color:var(--muted); font-size:0.98rem}
-
-  /* careers */
-  .career-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
-  .career{background:linear-gradient(180deg, rgba(0,112,255,0.03), rgba(0,176,255,0.02)); padding:16px; border-radius:12px; border:1px solid rgba(0,112,255,0.06)}
-  .role{display:flex; justify-content:space-between; align-items:center}
-
-  /* contact */
-  .contact-wrap{display:grid; grid-template-columns:1fr 420px; gap:20px}
-  .contact-card{padding:18px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
-  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:10px}
-  input, textarea{padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); color:inherit; outline:none}
-  textarea{min-height:120px; resize:vertical}
-
-  /* footer */
-  footer{padding:30px 20px; border-top:1px solid rgba(255,255,255,0.02); color:var(--muted)}
-
-  /* waves */
-  .wave{display:block; width:100%; margin-top:20px; transform:translateY(2px)}
-
-  /* subtle animations */
-  .fade{opacity:0; transform:translateY(10px); transition: all 700ms cubic-bezier(.2,.9,.2,1)}
-  .fade.show{opacity:1; transform:none}
-
-  /* robot animation */
-  .eye{fill:var(--accent1)}
-  .antenna{stroke:var(--accent1); stroke-width:2; stroke-linecap:round}
-  .robot-bob{animation:bob 3.6s ease-in-out infinite}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-
-  /* responsive */
-  @media (max-width:980px){
-    .hero{grid-template-columns:1fr; text-align:center}
-    .contact-wrap{grid-template-columns:1fr}
-    .cards{grid-template-columns:repeat(2,1fr)}
-    .career-grid{grid-template-columns:1fr}
-    .nav-links{display:none}
-    .hamb{display:inline-block}
-  }
-  @media (max-width:640px){
-    h1{font-size:1.6rem}
-    .cards{grid-template-columns:1fr}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AB Robotics</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      line-height: 1.6;
+      background: #f5f9ff;
+    }
+    header {
+      background: linear-gradient(90deg, #003366, #0055aa);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.2rem;
+      background: #0055aa;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #003f88;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581092335309-c9dcdf9a9e86?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease;
+    }
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .img-grid img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.4s;
+    }
+    .img-grid img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<header class="nav" role="banner">
-  <div class="nav-inner">
-    <a class="brand" href="#home" aria-label="AB Robotics Home">
-      <!-- small robot logo -->
-      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-        <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#00b0ff"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs>
-        <rect rx="10" width="64" height="64" fill="url(#g1)"/>
-        <g transform="translate(10,12)" fill="#04132b">
-          <rect x="6" y="6" width="36" height="28" rx="6"/>
-          <circle cx="18" cy="18" r="3" fill="#bfeeff"/>
-          <circle cx="30" cy="18" r="3" fill="#bfeeff"/>
-        </g>
-      </svg>
-      <div>
-        <h3>AB Robotics</h3>
-        <div style="font-size:11px; color:var(--muted)">Engineering the future</div>
-      </div>
-    </a>
-
-    <nav class="nav-links" role="navigation" aria-label="Main">
+  <header>
+    <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#products">Products</a>
+      <a href="#contact">Contact Us</a>
       <a href="#careers">Careers</a>
-      <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <div style="display:flex;gap:10px;align-items:center">
-      <a class="ghost" href="#contact">Get in touch</a>
-      <a class="cta" href="#careers">Work with us</a>
-      <button class="hamb" id="hamb" aria-label="menu">☰</button>
+  <section id="home" class="hero visible">
+    <h1>Welcome to AB Robotics</h1>
+    <p>Building the future with robotics, AI, and innovation — empowering the next generation of problem-solvers.</p>
+    <a href="#about" class="btn">Explore More</a>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>AB Robotics is committed to developing intelligent robotics solutions for education, industry, and beyond. We combine technology and creativity to inspire young minds and drive progress.</p>
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Students working on robotics">
+      <img src="https://images.unsplash.com/photo-1603398938378-df7c72bdbde5?auto=format&fit=crop&w=800&q=80" alt="Team collaboration">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Innovation and creativity">
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- HERO -->
-<section id="home" class="hero" aria-labelledby="homeTitle">
-  <div class="hero-left">
-    <span class="eyebrow">Now hiring • Workshops • Demos</span>
-    <h1 id="homeTitle">AB Robotics — <strong>Smart</strong> robots, practical impact</h1>
-    <p class="lead">We design education-first robotics kits, industrial automation solutions, and hands-on workshops that empower students and engineers to build, learn, and scale.</p>
-    <div class="hero-cta">
-      <a class="cta" href="#contact">Request Demo</a>
-      <a class="ghost" href="#about">Our Story</a>
-    </div>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:contact@abrobotics.com">contact@abrobotics.com</a></p>
+    <p>Phone: +1 (234) 567-890</p>
+    <p>Address: 123 Innovation Drive, Tech City</p>
+  </section>
 
-    <div style="margin-top:20px; display:flex; gap:12px; align-items:center">
-      <div class="tiny"><strong style="color:var(--accent1)">Trusted by</strong> schools • makers • startups</div>
-      <div style="display:flex; gap:10px; margin-left:8px">
-        <div style="width:42px;height:30px;background:rgba(255,255,255,0.02);border-radius:6px"></div>
-        <div style="width:42px;height:30px;background:rgba(255,255,255,0.02);border-radius:6px"></div>
-        <div style="width:42px;height:30px;background:rgba(255,255,255,0.02);border-radius:6px"></div>
-      </div>
-    </div>
-  </div>
+  <section id="careers">
+    <h2>Careers</h2>
+    <p>Be part of a forward-thinking team shaping the future of robotics. Explore opportunities for engineers, designers, and innovators.</p>
+    <a href="mailto:careers@abrobotics.com" class="btn">Apply Now</a>
+  </section>
 
-  <div class="hero-card fade" id="heroCard">
-    <div class="robot-wrap">
-      <!-- stylized SVG robot -->
-      <svg class="robot-svg robot-bob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-        <defs>
-          <linearGradient id="rgrad" x1="0" x2="1">
-            <stop offset="0" stop-color="#00b0ff"/>
-            <stop offset="1" stop-color="#0066ff"/>
-          </linearGradient>
-          <filter id="glow"><feGaussianBlur stdDeviation="6" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-        <!-- body -->
-        <rect x="40" y="60" rx="18" ry="18" width="120" height="90" fill="#071632" stroke="url(#rgrad)" stroke-width="3"/>
-        <!-- head -->
-        <rect x="60" y="24" rx="12" ry="12" width="80" height="54" fill="#071632" stroke="rgba(0,176,255,0.15)" stroke-width="2"/>
-        <!-- eyes -->
-        <circle class="eye" cx="85" cy="48" r="6" />
-        <circle class="eye" cx="115" cy="48" r="6" />
-        <!-- antenna -->
-        <line class="antenna" x1="100" y1="24" x2="100" y2="8"/>
-        <circle cx="100" cy="6" r="4" fill="url(#rgrad)"/>
-        <!-- smile -->
-        <path d="M82 61 q18 12 36 0" stroke="#66d1ff" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
-        <!-- chest indicator -->
-        <g transform="translate(70,82)">
-          <rect x="0" y="0" rx="6" width="60" height="18" fill="#021028"/>
-          <rect x="4" y="4" width="14" height="10" rx="3" fill="url(#rgrad)" filter="url(#glow)"/>
-          <rect x="22" y="4" width="14" height="10" rx="3" fill="#004d99"/>
-          <rect x="40" y="4" width="14" height="10" rx="3" fill="#003366"/>
-        </g>
-      </svg>
-    </div>
+  <footer>
+    <p>© 2025 AB Robotics. All rights reserved.</p>
+  </footer>
 
-    <div class="stats" aria-hidden>
-      <div class="stat"><div style="font-size:18px">120+</div><div style="font-size:11px;color:var(--muted)">Schools onboard</div></div>
-      <div class="stat"><div style="font-size:18px">5000+</div><div style="font-size:11px;color:var(--muted)">Students trained</div></div>
-      <div class="stat"><div style="font-size:18px">24</div><div style="font-size:11px;color:var(--muted)">Products</div></div>
-    </div>
-  </div>
-</section>
+  <script>
+    const sections = document.querySelectorAll('section');
 
-<!-- wave -->
-<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,32 C200,90 340,0 720,44 C1100,88 1240,16 1440,48 L1440,0 L0,0 Z" fill="#03112a"/></svg>
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
 
-<!-- ABOUT / PRODUCTS -->
-<section id="about" class="fade">
-  <h2 style="text-align:center; color:var(--accent1)">What we build</h2>
-  <p style="text-align:center; color:var(--muted); margin-top:10px; max-width:820px; margin-left:auto; margin-right:auto">From modular education kits to line-following industrial bots — our products are designed to teach fundamentals, accelerate prototyping and deliver reliable automation.</p>
-
-  <div class="cards" style="margin-top:24px">
-    <div class="card fade">
-      <h3>Edu Kit • Simba</h3>
-      <p>Plug-and-play robotics kit for schools. Drag-and-drop blocks, offline curriculum and hands-on challenges.</p>
-    </div>
-    <div class="card fade">
-      <h3>FactoryBot • Flex</h3>
-      <p>Compact automation modules for pick-and-place & conveyor tasks. Easy integration and low TCO.</p>
-    </div>
-    <div class="card fade">
-      <h3>Custom Solutions</h3>
-      <p>Tailored hardware + software design services — prototyping, production and maintenance support.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CAREERS -->
-<section id="careers" class="fade">
-  <h2 style="text-align:center; color:var(--accent1)">Join AB Robotics</h2>
-  <p style="text-align:center; color:var(--muted); max-width:760px; margin:auto">We hire engineers, educators and creative problem solvers. Below are some open roles — send a quick intro to <strong style="color:var(--accent1)">careers@abrobotics.com</strong></p>
-
-  <div class="career-grid" style="margin-top:20px">
-    <div class="career fade">
-      <div class="role"><div><strong>Embedded SW Engineer</strong><div class="tiny" style="color:var(--muted)">Experience: 2+ years</div></div><div style="color:var(--accent1)">Full-time</div></div>
-      <div style="margin-top:10px;color:var(--muted)">Work on firmware for motor control, sensors and communication stacks. C/C++, RTOS experience preferred.</div>
-      <div style="margin-top:12px"><a class="cta" href="mailto:careers@abrobotics.com?subject=Apply%20-%20Embedded%20SW%20Engineer">Apply</a></div>
-    </div>
-
-    <div class="career fade">
-      <div class="role"><div><strong>Robotics Instructor / Curriculum Lead</strong><div class="tiny" style="color:var(--muted)">Experience: teaching / workshops</div></div><div style="color:var(--accent1)">Part-time</div></div>
-      <div style="margin-top:10px;color:var(--muted)">Design and deliver hands-on courses to students and hobbyists. Strong communication and demo skills required.</div>
-      <div style="margin-top:12px"><a class="cta" href="mailto:careers@abrobotics.com?subject=Apply%20-%20Instructor">Apply</a></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="fade">
-  <h2 style="text-align:center; color:var(--accent1)">Let's talk</h2>
-  <p style="text-align:center; color:var(--muted); max-width:760px; margin:auto">Questions about workshops, kits, bulk orders, or custom solutions? Drop a line — we respond fast.</p>
-
-  <div class="contact-wrap" style="margin-top:18px">
-    <div class="contact-card">
-      <form id="contactForm" onsubmit="sendMail(event)">
-        <div class="field">
-          <label class="tiny">Your name</label>
-          <input id="name" required placeholder="Jane Doe">
-        </div>
-        <div class="field">
-          <label class="tiny">Email</label>
-          <input id="email" type="email" required placeholder="you@example.com">
-        </div>
-        <div class="field">
-          <label class="tiny">Message</label>
-          <textarea id="message" placeholder="Tell us about your project or inquiry…" required></textarea>
-        </div>
-        <div style="display:flex; gap:10px; align-items:center">
-          <button class="cta" type="submit">Send message</button>
-          <button type="button" class="ghost" onclick="location.href='mailto:contact@abrobotics.com'">Email us</button>
-        </div>
-      </form>
-    </div>
-
-    <div class="contact-card" style="display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:flex-start">
-      <div style="font-weight:700; color:var(--accent1)">Contact Info</div>
-      <div style="color:var(--muted)">Email: <a href="mailto:contact@abrobotics.com" style="color:var(--accent1)">contact@abrobotics.com</a></div>
-      <div style="color:var(--muted)">Phone: +91 98xxxxxxx</div>
-      <div style="color:var(--muted)">Address: Chintamani, Karnataka, India</div>
-
-      <div style="margin-top:12px; width:100%">
-        <div style="font-weight:700; color:var(--accent1); margin-bottom:8px">Demo Request</div>
-        <p style="color:var(--muted)">Want a classroom demo or a factory trial? Tell us approximate date & group size in the message.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div style="max-width:1150px; margin:0 auto; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; padding:6px 20px">
-    <div style="display:flex; gap:12px; align-items:center">
-      <svg width="36" height="36" viewBox="0 0 64 64"><rect rx="8" width="64" height="64" fill="url(#g2)"/></svg>
-      <div>
-        <strong>AB Robotics</strong><div style="font-size:12px;color:var(--muted)">Education • Automation • Makers</div>
-      </div>
-    </div>
-
-    <div style="color:var(--muted)">© <span id="yr"></span> AB Robotics • <a href="#contact" style="color:var(--accent1); text-decoration:none">Contact</a> • <a href="#careers" style="color:var(--accent1); text-decoration:none">Careers</a></div>
-  </div>
-</footer>
-
-<script>
-  // set current year
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // Mobile menu toggle
-  const hamb = document.getElementById('hamb');
-  hamb?.addEventListener('click', ()=> {
-    const nav = document.querySelector('.nav-links');
-    if(!nav) return;
-    if(nav.style.display === 'flex'){ nav.style.display = ''; } else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.position='absolute'; nav.style.right='18px'; nav.style.top='66px'; nav.style.background='rgba(5,8,22,0.9)'; nav.style.padding='12px'; nav.style.borderRadius='10px'}
-  });
-
-  // reveal on scroll
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting) e.target.classList.add('show');
+    sections.forEach(section => {
+      if (!section.classList.contains('visible')) {
+        observer.observe(section);
+      }
     });
-  }, {threshold: 0.12});
-  document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
-
-  // small show for hero card
-  setTimeout(()=> document.getElementById('heroCard')?.classList.add('show'), 300);
-
-  // form -> simple mailto (no backend). It opens user's email client with prefilled content
-  function sendMail(e){
-    e.preventDefault();
-    const name = encodeURIComponent(document.getElementById('name').value.trim());
-    const email = encodeURIComponent(document.getElementById('email').value.trim());
-    const msg = encodeURIComponent(document.getElementById('message').value.trim());
-    const subject = encodeURIComponent('Website Inquiry from ' + name);
-    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
-    // open mail client
-    location.href = `mailto:contact@abrobotics.com?subject=${subject}&body=${body}`;
-  }
-</script>
+  </script>
 </body>
 </html>
