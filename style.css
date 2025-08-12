@@ -1,49 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color:  yellow;
-    color: Black;
-    padding: 20px;
-    text-align: center;
-}
-
-header .logo {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-nav a {
-    color: darkblue;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-.content-image {
-    max-width: 300px;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
-footer {
-    background-color: yellow;
-    color: black;
-    text-align: center;
-    padding: 10px 0;
-}
+body { font-family: Arial, sans-serif; background: #f5f9ff; margin: 0; padding: 0; color: #0b1b2b; }
+header { background: #003366; padding: 1rem; text-align: center; }
+nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+.hero { background: url('images/hero.jpg') center/cover no-repeat; padding: 5rem 1rem; color: white; text-align: center; position: relative; }
+.hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+.hero h1, .hero p, .hero a { position: relative; z-index: 1; }
+.btn { background: #0055aa; color: white; padding: 0.7rem 1.2rem; text-decoration: none; border-radius: 5px; display: inline-block; }
+.btn:hover { background: #003f88; }
+section { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
+.img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+.img-grid img { width: 100%; border-radius: 10px; }
+footer { background: #003366; color: white; text-align: center; padding: 1rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.product { background: white; border-radius: 10px; padding: 1rem; text-align: center; }
+.product img { border-radius: 10px; }
+.price { color: #0055aa; font-weight: bold; display: block; margin: 0.5rem 0; }
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { position: static; left: auto; top: auto; width: auto; height: auto; background: white; padding: 0.5rem; z-index: 1000; }
