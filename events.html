@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshops & Events | AB! Robotics Lab</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --blueprint-bg: #f0f4f8;
+      --accent-blue: #004dff;
+      --neon-glow: #00d4ff;
+      --white-glass: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: 
+        linear-gradient(rgba(0, 77, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 77, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: #2d3436;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* --- Navbar: Extreme Alignment --- */
+    .navbar {
+      background: var(--white-glass) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--accent-blue);
+      padding: 18px 0;
+    }
+    .navbar-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent-blue) !important; font-size: 1.8rem; }
+    
+    .nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-left: 25px;
+      color: #444 !important;
+      transition: 0.3s;
+    }
+    .nav-link:hover { color: var(--accent-blue) !important; transform: translateY(-2px); }
+
+    /* --- Event Cards --- */
+    .event-card {
+      background: var(--white-glass);
+      border: 1px solid rgba(0, 77, 255, 0.1);
+      border-radius: 24px;
+      padding: 35px;
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+    }
+    .event-card:hover {
+      background: #ffffff;
+      border-color: var(--neon-glow);
+      transform: translateY(-12px);
+      box-shadow: 0 15px 40px rgba(0, 77, 255, 0.1);
+    }
+
+    .neon-date-badge {
+      background: var(--accent-blue);
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      box-shadow: 0 0 10px var(--neon-glow);
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    /* --- Gallery Hover --- */
+    .gallery-img {
+      border-radius: 15px;
+      transition: 0.4s;
+      cursor: pointer;
+      object-fit: cover;
+      height: 250px;
+      width: 100%;
+      border: 3px solid white;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+      border-color: var(--neon-glow);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* --- Action Ribbon --- */
+    .neon-ribbon {
+      background: var(--accent-blue);
+      color: white;
+      padding: 30px 0;
+      box-shadow: 0 -10px 30px rgba(0, 77, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-xl navbar-light sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/abhi_logo_fit.png" alt="AB!" height="40"> AB! <span style="color: var(--neon-glow)">Robotics</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-4">
+            <a class="btn btn-primary rounded-pill px-4 fw-bold shadow" href="contact.html" style="background: var(--accent-blue); border: none;">BOOK A SEAT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 bg-white">
+    <div class="container py-5 text-center" data-aos="fade-down">
+      <h6 class="text-primary fw-bold text-uppercase ls-2 mb-3">Community & Hands-on Learning</h6>
+      <h1 class="display-4 fw-bold mb-4">Upcoming <span style="color: var(--accent-blue)">STEM Events</span></h1>
+      <p class="lead text-secondary mx-auto" style="max-width: 800px;">From intensive bootcamps to team hackathons, our events are designed to spark innovation and practical problem-solving in Grades 4–9.</p>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="event-card">
+            <div class="neon-date-badge">APRIL 2025</div>
+            <h4 class="fw-bold">Spring Bootcamp</h4>
+            <p class="small text-muted mb-4">A 4-day intensive robotics sprint covering mechanical assembly and autonomous navigation.</p>
+            <div class="d-flex align-items-center small text-secondary mb-4">
+              <i class="fas fa-location-dot me-2 text-primary"></i> Bengaluru Lab
+            </div>
+            <a href="contact.html" class="btn btn-primary rounded-pill w-100 fw-bold shadow-sm" style="background: var(--accent-blue);">REGISTER NOW</a>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="event-card border-info" style="background: white;">
+            <div class="neon-date-badge" style="background: var(--neon-glow); color: #001a2e;">MAY 2025</div>
+            <h4 class="fw-bold">AI Hackathon</h4>
+            <p class="small text-muted mb-4">Team-based competition to build computer-vision bots. Open for Teen Techies (Grades 7-9).</p>
+            <div class="d-flex align-items-center small text-secondary mb-4">
+              <i class="fas fa-trophy me-2 text-primary"></i> Cash Prizes & Merit Certificates
+            </div>
+            <a href="contact.html" class="btn btn-primary rounded-pill w-100 fw-bold shadow-sm" style="background: var(--accent-blue);">JOIN TEAMS</a>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="event-card">
+            <div class="neon-date-badge">JUNE 2025</div>
+            <h4 class="fw-bold">STEM Teacher Training</h4>
+            <p class="small text-muted mb-4">Specialized pedagogy workshop for educators on setting up sustainable robotics labs.</p>
+            <div class="d-flex align-items-center small text-secondary mb-4">
+              <i class="fas fa-graduation-cap me-2 text-primary"></i> Certification Included
+            </div>
+            <a href="contact.html" class="btn btn-outline-primary rounded-pill w-100 fw-bold">ENROLL AS EDUCATOR</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-white">
+    <div class="container py-5">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="display-6 fw-bold">Past Highlights</h2>
+        <p class="text-secondary">A glimpse into our world of innovation and playful learning.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <img src="images/events1.jpg" class="gallery-img shadow" alt="Robotics Workshop">
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <img src="images/events2.jpg" class="gallery-img shadow" alt="Student Presentation">
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <img src="images/events3.jpg" class="gallery-img shadow" alt="AI Hackathon Winners">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" style="background-color: #f8faff;">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+          <h2 class="display-5 fw-bold mb-4">Why Attend <span style="color: var(--accent-blue);">AB!</span> Events?</h2>
+          <p class="lead text-secondary">Our events follow the <strong>Engineering Design Process (EDP)</strong>, ensuring students don't just "attend"—they "invent."</p>
+          
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-up">
+              <i class="fas fa-microchip text-info mb-3 fs-3"></i>
+              <h5 class="fw-bold">Latest Tech Stack</h5>
+              <p class="small text-muted">Direct access to modern sensors, Arduino, and Python-driven AI modules.</p>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-users-gear text-info mb-3 fs-3"></i>
+              <h5 class="fw-bold">Peer Networking</h5>
+              <p class="small text-muted">Connect with like-minded students across Karnataka and build future-ready teams.</p>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-brain text-info mb-3 fs-3"></i>
+              <h5 class="fw-bold">Critical Reasoning</h5>
+              <p class="small text-muted">Master logical problem-solving through rapid prototyping and iteration.</p>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-award text-info mb-3 fs-3"></i>
+              <h5 class="fw-bold">Skill Recognition</h5>
+              <p class="small text-muted">Earn certificates that boost your academic portfolio and future career prospects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="neon-ribbon text-center shadow-lg">
+    <div class="container d-flex flex-row justify-content-between align-items-center">
+      <span class="h5 fw-bold mb-0"><i class="fas fa-calendar-check me-2"></i> Limited seats available for the Spring Bootcamp!</span>
+      <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5 fw-bold" style="color: var(--accent-blue);">BOOK A SPOT</a>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-white border-top">
+    <div class="container text-center">
+      <img src="images/abhi_logo_fit.png" alt="AB!" height="30" class="mb-2">
+      <p class="small text-muted mb-0">© 2025 AB! Robotics Lab. Building Minds, Shaping Futures.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

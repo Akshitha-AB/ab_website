@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Certificate Verification | AB! Robotics Lab</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --blueprint-bg: #f0f4f8;
+      --accent-blue: #004dff;
+      --neon-glow: #00d4ff;
+      --white-glass: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: 
+        linear-gradient(rgba(0, 77, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 77, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: #2d3436;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* --- Navbar: Extreme Alignment --- */
+    .navbar {
+      background: var(--white-glass) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--accent-blue);
+      padding: 18px 0;
+    }
+    .navbar-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent-blue) !important; font-size: 1.8rem; }
+    
+    .nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-left: 25px;
+      color: #444 !important;
+      transition: 0.3s;
+    }
+    .nav-link:hover { color: var(--accent-blue) !important; transform: translateY(-2px); }
+
+    /* --- Verification Form --- */
+    .verify-box {
+      background: var(--white-glass);
+      padding: 50px;
+      border-radius: 30px;
+      border: 1px solid rgba(0, 77, 255, 0.1);
+      box-shadow: 0 15px 40px rgba(0, 77, 255, 0.05);
+    }
+    .form-control-lg {
+      border-radius: 12px;
+      border: 2px solid #e0e6ed;
+      padding: 15px 25px;
+    }
+    .form-control-lg:focus {
+      border-color: var(--neon-glow);
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+    }
+
+    /* --- Certificate Preview --- */
+    .cert-preview-card {
+      background: white;
+      border-radius: 20px;
+      border: 2px solid #fff;
+      transition: 0.4s;
+      cursor: pointer;
+    }
+    .cert-preview-card:hover {
+      transform: scale(1.03);
+      border-color: var(--neon-glow);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    /* --- Action Ribbon --- */
+    .neon-ribbon {
+      background: var(--accent-blue);
+      color: white;
+      padding: 30px 0;
+      box-shadow: 0 -10px 30px rgba(0, 77, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-xl navbar-light sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/abhi_logo_fit.png" alt="AB!" height="40"> AB! <span style="color: var(--neon-glow)">Robotics</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary" href="certificate.html">Certificate</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-4">
+            <a class="btn btn-primary rounded-pill px-4 fw-bold shadow" href="contact.html" style="background: var(--accent-blue); border: none;">VERIFY NOW</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 bg-white text-center">
+    <div class="container py-5" data-aos="fade-down">
+      <h6 class="text-primary fw-bold text-uppercase ls-2 mb-3">Academic Integrity Portal</h6>
+      <h1 class="display-4 fw-bold mb-4">Verify Your <span style="color: var(--accent-blue)">Achievement</span></h1>
+      <p class="lead text-secondary mx-auto" style="max-width: 700px;">Each AB! Robotics certificate is a testament to technical proficiency and adherence to the professional Engineering Design Process.</p>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="zoom-in">
+          <div class="verify-box">
+            <h4 class="fw-bold mb-4 text-center">Enter Certificate Details</h4>
+            <form id="cert-form" class="row g-3">
+              <div class="col-md-9">
+                <input type="text" class="form-control form-control-lg" placeholder="e.g., ABR-2025-XXXX" required>
+              </div>
+              <div class="col-md-3 d-grid">
+                <button class="btn btn-primary btn-lg rounded-pill fw-bold" type="submit" style="background: var(--accent-blue); border: none;">SEARCH</button>
+              </div>
+            </form>
+            <p class="text-center small text-muted mt-3 mb-0"><i class="fas fa-shield-halved me-2"></i> Verification includes student name, course level, and date of completion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" style="background-color: #f8faff;">
+    <div class="container py-5">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="display-5 fw-bold mb-4">Why Our <span class="text-primary">Certificates</span> Matter</h2>
+          <p class="lead text-secondary">We don't just reward participation. Our credentials certify that a student has mastered a structured engineering mindset.</p>
+          
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+           <div class="p-3 shadow-lg cert-preview-card">
+              <img src="images/certificate_sample.jpg" class="img-fluid rounded" alt="AB! Robotics Sample Certificate">
+              <div class="mt-3 text-center"><small class="text-muted fw-bold">Sample: Excellence in Robotics & AI</small></div>
+           </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-4 bg-white rounded-4 border-start border-4 border-info h-100">
+            <h5 class="fw-bold text-primary"><i class="fas fa-check-double me-2"></i> Skill Validation</h5>
+            <p class="small text-muted mb-0">Confirms mastery in Python, Arduino, and autonomous robotics.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-4 bg-white rounded-4 border-start border-4 border-info h-100">
+            <h5 class="fw-bold text-primary"><i class="fas fa-graduation-cap me-2"></i> Portfolio Build</h5>
+            <p class="small text-muted mb-0">Industry-recognized credentials for school records and college applications.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-4 bg-white rounded-4 border-start border-4 border-info h-100">
+            <h5 class="fw-bold text-primary"><i class="fas fa-award me-2"></i> Performance Based</h5>
+            <p class="small text-muted mb-0">Awarded only upon successful completion of a capstone project.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="neon-ribbon text-center shadow-lg">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="h5 fw-bold mb-3 mb-md-0"><i class="fas fa-bolt me-2"></i> Start your journey toward industry-recognized STEM mastery.</span>
+      <a href="programs.html" class="btn btn-light btn-lg rounded-pill px-5 fw-bold" style="color: var(--accent-blue);">ENROLL TODAY</a>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-white border-top text-center">
+    <div class="container">
+      <img src="images/abhi_logo_fit.png" alt="AB!" height="30" class="mb-2">
+      <p class="small text-muted mb-0">© 2025 AB! Robotics Lab. Building Minds, Shaping Futures.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

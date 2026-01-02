@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | AB! Robotics Lab</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --blueprint-bg: #f0f4f8;
+      --accent-blue: #004dff;
+      --neon-glow: #00d4ff;
+      --white-glass: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: 
+        linear-gradient(rgba(0, 77, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 77, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: #2d3436;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* --- Extreme Alignment Navbar --- */
+    .navbar {
+      background: var(--white-glass) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--accent-blue);
+      padding: 18px 0;
+    }
+    .navbar-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent-blue) !important; font-size: 1.8rem; }
+    
+    .nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-left: 25px;
+      color: #444 !important;
+      transition: 0.3s;
+    }
+    .nav-link:hover { color: var(--accent-blue) !important; transform: translateY(-2px); }
+
+    /* --- Section Styling --- */
+    .about-hero {
+      padding: 100px 0;
+      background: linear-gradient(rgba(240, 244, 248, 0.9), rgba(240, 244, 248, 0.9)), url('images/creativity.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .vision-card {
+      background: var(--white-glass);
+      border: 1px solid rgba(0, 77, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.4s ease;
+      height: 100%;
+    }
+    .vision-card:hover {
+      border-color: var(--neon-glow);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 77, 255, 0.1);
+    }
+
+    .icon-badge {
+      width: 60px; height: 60px;
+      background: var(--blueprint-bg);
+      color: var(--accent-blue);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 20px;
+    }
+
+    /* --- Footer Action Ribbon --- */
+    .neon-ribbon {
+      background: var(--accent-blue);
+      color: white;
+      padding: 30px 0;
+      box-shadow: 0 -10px 30px rgba(0, 77, 255, 0.2);
+    }
+
+    footer { background: #fdfdfd; border-top: 1px solid #eee; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-xl navbar-light sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/abhi_logo_fit.png" alt="AB!" height="40"> AB! <span style="color: var(--neon-glow)">Robotics</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-4">
+            <a class="btn btn-primary rounded-pill px-4 fw-bold shadow" href="contact.html" style="background: var(--accent-blue); border: none;">FREE DEMO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+    <div class="container" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h6 class="text-primary fw-bold text-uppercase mb-3" style="letter-spacing: 2px;">Building Tomorrow's Engineers</h6>
+          <h1 class="display-4 fw-bold mb-4">Empowering <span style="color: var(--accent-blue)">Young Minds</span> to Create.</h1>
+          <p class="lead text-secondary">AB! Robotics is a student-led innovation hub based in Karnataka, specifically designed for students from Grade 4 to 9. We bridge the gap between textbook theory and real-world engineering.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/excited_kids.jpg" class="img-fluid rounded-4 shadow-lg border border-white border-4" alt="Excited Kids Learning">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container py-5">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Our Scientific Pillars</h2>
+        <p class="text-secondary">We follow the professional Engineering Design Process (EDP) used by global pioneers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="vision-card">
+            <div class="icon-badge"><i class="fas fa-eye"></i></div>
+            <h4 class="fw-bold">Our Vision</h4>
+            <p class="small text-muted">To foster an environment where "Imagination is more important than knowledge". We aim to turn every curious student into a confident innovator.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="vision-card">
+            <div class="icon-badge"><i class="fas fa-rocket"></i></div>
+            <h4 class="fw-bold">Our Mission</h4>
+            <p class="small text-muted">"The way to get started is to quit talking and begin doing". We provide hands-on labs that make learning practical and playful.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="vision-card">
+            <div class="icon-badge"><i class="fas fa-heart"></i></div>
+            <h4 class="fw-bold">Our Values</h4>
+            <p class="small text-muted">Resilience through iteration. As Edison said, "Genius is 1% inspiration and 99% perspiration". We value growth over perfection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" style="background: white;">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+          <img src="images/advanced-robotics-lab-stockcake.jpg" class="img-fluid rounded-4 shadow" alt="Advanced Lab">
+        </div>
+        <div class="col-lg-6 px-lg-5" data-aos="fade-left">
+          <h2 class="display-6 fw-bold mb-4">Why Parents Trust <span class="text-primary">AB! Robotics</span></h2>
+          <ul class="list-unstyled">
+            <li class="mb-4 d-flex align-items-start">
+              <i class="fas fa-check-circle text-info me-3 mt-1 fs-5"></i>
+              <div>
+                <h6 class="fw-bold">Structured STEM Roadmap</h6>
+                <p class="small text-muted mb-0">Grade-specific curriculum that evolves from block-logic to Python coding.</p>
+              </div>
+            </li>
+            <li class="mb-4 d-flex align-items-start">
+              <i class="fas fa-check-circle text-info me-3 mt-1 fs-5"></i>
+              <div>
+                <h6 class="fw-bold">Mentorship by Engineers</h6>
+                <p class="small text-muted mb-0">Learn from professionals who follow real-world engineering standards.</p>
+              </div>
+            </li>
+            <li class="mb-4 d-flex align-items-start">
+              <i class="fas fa-check-circle text-info me-3 mt-1 fs-5"></i>
+              <div>
+                <h6 class="fw-bold">Global Industry Exposure</h6>
+                <p class="small text-muted mb-0">Certifications and projects recognized by tech partners.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="neon-ribbon text-center shadow-lg">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="h5 fw-bold mb-3 mb-md-0"><i class="fas fa-bolt me-2"></i>  Join the league of student innovators across the globe.</span>
+      <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5 fw-bold" style="color: var(--accent-blue);">JOIN THE MOVEMENT</a>
+    </div>
+  </div>
+
+  <footer class="py-5">
+    <div class="container text-center">
+      <img src="images/abhi_logo_fit.png" alt="AB!" height="35" class="mb-3">
+      <p class="small text-muted">© 2026 AB! Robotics Lab. Building Minds, Shaping Futures.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

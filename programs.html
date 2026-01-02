@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programs & Curriculum | AB! Robotics Lab</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --blueprint-bg: #f0f4f8;
+      --accent-blue: #004dff;
+      --neon-glow: #00d4ff;
+      --white-glass: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: 
+        linear-gradient(rgba(0, 77, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 77, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: #2d3436;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* --- Navbar: Extreme Alignment --- */
+    .navbar {
+      background: var(--white-glass) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--accent-blue);
+      padding: 18px 0;
+    }
+    .navbar-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent-blue) !important; font-size: 1.8rem; }
+    
+    .nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-left: 25px;
+      color: #444 !important;
+      transition: 0.3s;
+    }
+    .nav-link:hover { color: var(--accent-blue) !important; transform: translateY(-2px); }
+
+    /* --- Program Cards --- */
+    .program-card {
+      background: var(--white-glass);
+      border: 1px solid rgba(0, 77, 255, 0.1);
+      border-radius: 24px;
+      padding: 40px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .program-card:hover {
+      background: #ffffff;
+      border-color: var(--neon-glow);
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 77, 255, 0.1);
+    }
+    .age-badge {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: var(--accent-blue);
+      color: white;
+      padding: 5px 40px;
+      transform: rotate(45deg);
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    /* --- Skill Tracks --- */
+    .track-box {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      border-left: 5px solid var(--accent-blue);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .track-box:hover {
+      background: var(--accent-blue);
+      color: white;
+      transform: scale(1.05);
+    }
+    .track-box:hover p { color: rgba(255,255,255,0.8); }
+
+    /* --- Bottom Action Ribbon --- */
+    .neon-ribbon {
+      background: var(--accent-blue);
+      color: white;
+      padding: 30px 0;
+      box-shadow: 0 -10px 30px rgba(0, 77, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-xl navbar-light sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/abhi_logo_fit.png" alt="AB!" height="40"> AB! <span style="color: var(--neon-glow)">Robotics</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-4">
+            <a class="btn btn-primary rounded-pill px-4 fw-bold shadow" href="contact.html" style="background: var(--accent-blue); border: none;">FREE DEMO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 bg-white">
+    <div class="container py-5 text-center" data-aos="fade-down">
+      <h6 class="text-primary fw-bold text-uppercase ls-2 mb-3">Structured Learning Pathways</h6>
+      <h1 class="display-4 fw-bold mb-4">Mastering the <span style="color: var(--accent-blue)">Future</span></h1>
+      <p class="lead text-secondary mx-auto" style="max-width: 800px;">Our curriculum is meticulously designed for students in Grades 4–9, following the professional Engineering Design Process (EDP) to turn curiosity into technical competence.</p>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="program-card">
+            <div class="age-badge">GR 4-6</div>
+            <i class="fas fa-cubes fa-3x text-primary mb-4"></i>
+            <h4 class="fw-bold">Junior Innovators</h4>
+            <p class="small text-muted mb-4">Foundational logic and hands-on building. Students explore mechanical movement and block-based coding.</p>
+            <ul class="list-unstyled small text-secondary mb-4">
+              <li><i class="fas fa-check text-info me-2"></i>LEGO® Education SPIKE™</li>
+              <li><i class="fas fa-check text-info me-2"></i>Visual Block Coding</li>
+              <li><i class="fas fa-check text-info me-2"></i>Intro to Sensors</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-primary rounded-pill w-100 fw-bold">View Full Modules</a>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="program-card border-info" style="background: white;">
+            <div class="age-badge">GR 7-9</div>
+            <i class="fas fa-microchip fa-3x text-primary mb-4"></i>
+            <h4 class="fw-bold">Teen Techies</h4>
+            <p class="small text-muted mb-4">Advanced mechanics and real-world scripting. Bridging the gap between software and hardware.</p>
+            <ul class="list-unstyled small text-secondary mb-4">
+              <li><i class="fas fa-check text-info me-2"></i>Python Programming</li>
+              <li><i class="fas fa-check text-info me-2"></i>Arduino & IoT Hubs</li>
+              <li><i class="fas fa-check text-info me-2"></i>Competition Robotics</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary rounded-pill w-100 fw-bold shadow-sm" style="background: var(--accent-blue);">View Full Modules</a>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="program-card">
+            <div class="age-badge">18+ ADV</div>
+            <i class="fas fa-brain fa-3x text-primary mb-4"></i>
+            <h4 class="fw-bold">Future Engineers</h4>
+            <p class="small text-muted mb-4">University-level concepts for high-schoolers and enthusiasts looking for professional skills.</p>
+            <ul class="list-unstyled small text-secondary mb-4">
+              <li><i class="fas fa-check text-info me-2"></i>ROS & Edge AI</li>
+              <li><i class="fas fa-check text-info me-2"></i>3D CAD & Printing</li>
+              <li><i class="fas fa-check text-info me-2"></i>Autonomous Drones</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-primary rounded-pill w-100 fw-bold">View Full Modules</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-white">
+    <div class="container py-5">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="display-6 fw-bold">Deep-Dive Skill Tracks</h2>
+        <p class="text-secondary">Specialized paths to master specific STEM domains.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="track-box">
+            <h6 class="fw-bold">Robotics & Automation</h6>
+            <p class="small text-muted mb-0">Master mechanisms, control systems, and actuators.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="track-box">
+            <h6 class="fw-bold">Coding & Game Dev</h6>
+            <p class="small text-muted mb-0">Evolution from Scratch logic to Python engines.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="track-box">
+            <h6 class="fw-bold">AI & Machine Learning</h6>
+            <p class="small text-muted mb-0">Explore computer vision and edge AI classification.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="track-box">
+            <h6 class="fw-bold">Electronics & IoT</h6>
+            <p class="small text-muted mb-0">Building connected systems with Arduino & Raspberry Pi.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+          <div class="track-box">
+            <h6 class="fw-bold">3D Design & Printing</h6>
+            <p class="small text-muted mb-0">Precision CAD design and additive fabrication.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600">
+          <div class="track-box">
+            <h6 class="fw-bold">Drone Technology</h6>
+            <p class="small text-muted mb-0">Aerodynamics, flight safety, and autonomous flight.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" style="background-color: #f8faff;">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+          <h2 class="display-5 fw-bold mb-4">The <span style="color: var(--accent-blue);">STEM</span> Advantage</h2>
+          <p class="lead text-secondary">"Tomorrow’s victories are won by today’s curiosity." We build the foundation for 21st-century success.</p>
+          
+          <div class="mt-4">
+            <div class="mb-3 d-flex align-items-center">
+              <i class="fas fa-brain text-info me-3 fs-4"></i>
+              <span class="fw-bold">Critical Reasoning & Logic</span>
+            </div>
+            <div class="mb-3 d-flex align-items-center">
+              <i class="fas fa-users-gear text-info me-3 fs-4"></i>
+              <span class="fw-bold">Teamwork & Collaboration</span>
+            </div>
+            <div class="mb-3 d-flex align-items-center">
+              <i class="fas fa-shield-halved text-info me-3 fs-4"></i>
+              <span class="fw-bold">Resilience & Growth Mindset</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="neon-ribbon text-center shadow-lg">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="h5 fw-bold mb-3 mb-md-0"><i class="fas fa-bolt me-2"></i>  Join the league of student innovators across the globe.</span>
+      <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5 fw-bold" style="color: var(--accent-blue);">BOOK FREE DEMO</a>
+    </div>
+  </div>
+
+  <footer class="py-5 bg-white border-top">
+    <div class="container text-center">
+      <img src="images/abhi_logo_fit.png" alt="AB!" height="35" class="mb-3">
+      <p class="small text-muted">© 2026 AB! Robotics Lab. Building Minds, Shaping Futures.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

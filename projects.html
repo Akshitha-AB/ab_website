@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Projects & Wall of Fame | AB! Robotics Lab</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --blueprint-bg: #f0f4f8;
+      --accent-blue: #004dff;
+      --neon-glow: #00d4ff;
+      --white-glass: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: 
+        linear-gradient(rgba(0, 77, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 77, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: #2d3436;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* --- Extreme Alignment Navbar --- */
+    .navbar {
+      background: var(--white-glass) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--accent-blue);
+      padding: 18px 0;
+    }
+    .navbar-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--accent-blue) !important; font-size: 1.8rem; }
+    
+    .nav-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-left: 25px;
+      color: #444 !important;
+      transition: 0.3s;
+    }
+    .nav-link:hover { color: var(--accent-blue) !important; transform: translateY(-2px); }
+
+    /* --- Project Portfolio Cards --- */
+    .project-card {
+      background: var(--white-glass);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 77, 255, 0.1);
+      transition: all 0.4s ease;
+      height: 100%;
+    }
+    .project-card:hover {
+      transform: translateY(-15px);
+      border-color: var(--neon-glow);
+      box-shadow: 0 20px 40px rgba(0, 77, 255, 0.1);
+    }
+    .project-img-wrapper {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.1);
+    }
+    
+    .tech-tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: var(--accent-blue);
+      color: white;
+      font-size: 0.7rem;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-weight: 700;
+    }
+
+    /* --- Action Ribbon --- */
+    .neon-ribbon {
+      background: var(--accent-blue);
+      color: white;
+      padding: 30px 0;
+      box-shadow: 0 -10px 30px rgba(0, 77, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-xl navbar-light sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/abhi_logo_fit.png" alt="AB!" height="40"> AB! <span style="color: var(--neon-glow)">Robotics</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-4">
+            <a class="btn btn-primary rounded-pill px-4 fw-bold shadow" href="contact.html" style="background: var(--accent-blue); border: none;">BOOK FREE DEMO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 bg-white text-center">
+    <div class="container py-5" data-aos="fade-down">
+      <h6 class="text-primary fw-bold text-uppercase ls-2 mb-3">Innovation Showcase</h6>
+      <h1 class="display-4 fw-bold mb-4">The <span style="color: var(--accent-blue)">Wall of Fame</span></h1>
+      <p class="lead text-secondary mx-auto" style="max-width: 800px;">Explore the incredible robots, smart systems, and AI applications engineered by our students (Grades 4–9) using the professional Engineering Design Process.</p>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/proj1.jpg" alt="Line follower">
+              <span class="tech-tag">ARDUINO + IR SENSORS</span>
+            </div>
+            <div class="p-4">
+              <h5 class="fw-bold">Autonomous Line Follower</h5>
+              <p class="small text-muted">A precision robot that navigates complex paths using PID control logic.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/proj2.jpg" alt="IoT Greenhouse">
+              <span class="tech-tag">NODE MCU + IOT</span>
+            </div>
+            <div class="p-4">
+              <h5 class="fw-bold">Smart IoT Greenhouse</h5>
+              <p class="small text-muted">Automated climate control system with real-time mobile dashboard monitoring.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/proj3.jpg" alt="AI Chess">
+              <span class="tech-tag">PYTHON + OPENCV</span>
+            </div>
+            <div class="p-4">
+              <h5 class="fw-bold">AI Chess Assistant</h5>
+              <p class="small text-muted">Computer vision system that recognizes physical board pieces and suggests moves.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/proj4.jpg" alt="Obstacle Bot">
+              <span class="tech-tag">ULTRASONIC + C++</span>
+            </div>
+            <div class="p-4">
+              <h5 class="fw-bold">Obstacle Avoidance Bot</h5>
+              <p class="small text-muted">Learner-built robot that maps environments and avoids collisions in real-time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/proj5.jpg" alt="Robotic Arm">
+              <span class="tech-tag">3D PRINTING + SERVOS</span>
+            </div>
+            <div class="p-4">
+              <h5 class="fw-bold">Bionic Arm Prototype</h5>
+              <p class="small text-muted">Custom-designed 3D printed arm mimicking human finger dexterity.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/proj6.jpg" alt="Drone Frame">
+              <span class="tech-tag">AERODYNAMICS + CARBON</span>
+            </div>
+            <div class="p-4">
+              <h5 class="fw-bold">Custom Drone Chassis</h5>
+              <p class="small text-muted">Optimized lightweight frame designed for high-stability autonomous flight.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" style="background-color: #f8faff;">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="display-5 fw-bold mb-4">How These Projects <br><span class="text-primary">Come to Life</span></h2>
+          <p class="lead text-secondary mb-4">We follow the professional 6-stage cycle used by top engineering firms worldwide.</p></div>
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <div class="col-sm-6" data-aos="fade-up">
+              <h5 class="fw-bold text-primary"><i class="fas fa-microchip me-2"></i> Real Hardware</h5>
+              <p class="small opacity-75">No simulated toys. We use professional-grade sensors, controllers, and components.</p>
+            </div>
+            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
+              <h5 class="fw-bold text-primary"><i class="fas fa-code me-2"></i> Clean Coding</h5>
+              <p class="small opacity-75">Students learn to write structured, efficient code in Python, C++, and Scratch.</p>
+            </div>
+            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <h5 class="fw-bold text-primary"><i class="fas fa-pencil-ruler me-2"></i> Iterative Design</h5>
+              <p class="small opacity-75">"Failure is just another way to learn." Every project undergoes multiple improvements.</p>
+            </div>
+            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
+              <h5 class="fw-bold text-primary"><i class="fas fa-graduation-cap me-2"></i> Skill Mastery</h5>
+              <p class="small opacity-75">Projects aren't just for show; they demonstrate a student's technical proficiency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="neon-ribbon text-center shadow-lg">
+    <div class="container d-flex flex-row justify-content-between align-items-center">
+      <span class="h5 fw-bold mb-0"><i class="fas fa-rocket me-2"></i> Ready to build your own innovation?</span>
+      <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5 fw-bold" style="color: var(--accent-blue);">START YOUR PROJECT</a>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-white border-top text-center">
+    <div class="container">
+      <img src="images/abhi_logo_fit.png" alt="AB!" height="30" class="mb-2">
+      <p class="small text-muted mb-0">© 2025 AB! Robotics Lab. Building Minds, Shaping Futures.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
